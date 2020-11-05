@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-for="listitem in todos" v-bind:key="listitem">
-      <h3>{{listitem.title}}</h3>
+      <h3>{{ listitem.title }}</h3>
     </div>
   </div>
 </template>
