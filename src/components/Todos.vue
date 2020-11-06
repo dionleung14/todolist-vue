@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div v-for="listitem in todos" v-bind:key="listitem">
-      <h3>{{ listitem.title }}</h3>
+    <div v-for="pokemon in listTodos" v-bind:key="pokemon.id">
+      <h3>{{ pokemon.title }}</h3>
     </div>
   </div>
 </template>
@@ -9,7 +9,7 @@
 <script>
   export default {
     name: "Todos",
-    props: ["todos"]
+    props: ["listTodos"]
   };
 </script>
 

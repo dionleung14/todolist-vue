@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     {{msg}}
-    <Todos v-bind:todos="todos" />
+    <Todos v-bind:listTodos="todosArr" />
   </div>
 </template>
 
@@ -15,7 +15,7 @@ import Todos from "./components/Todos.vue";
     data() {
       return {
         msg: "Hello",
-        todos: [
+        todosArr: [
           {
             id: 1,
             title: "todo one",
