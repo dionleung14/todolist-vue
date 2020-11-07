@@ -18,7 +18,7 @@ import Todos from "./components/Todos.vue";
         todosArr: [
           {
             id: 1,
-            title: "todo one",
+            title: "todo uno",
             completed: false
           },
           {
