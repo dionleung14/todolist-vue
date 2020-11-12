@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     {{msg}}
-    <Todos v-bind:listTodos="todosArr" />
+    <Todos v-bind:geoduck="todosArr" />
   </div>
 </template>
 

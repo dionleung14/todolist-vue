@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div v-for="pokemon in listTodos" v-bind:key="pokemon.id">
+    <div v-for="pokemon in geoduck" v-bind:key="pokemon.id">
       <h3>{{ pokemon.title }}</h3>
-    <TodoItem />
+      <TodoItem v-bind:todo="pokemon"/>
     </div>
   </div>
 </template>
@@ -10,12 +10,12 @@
 <script>
   import TodoItem from './TodoItem.vue'
 
-export default {
+  export default {
     name: "Todos",
     components: {
       TodoItem
     },
-    props: ["listTodos"]
+    props: ["geoduck"]
   };
 </script>
 
