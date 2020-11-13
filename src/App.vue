@@ -1,16 +1,23 @@
 <template>
   <div id="app">
-    {{msg}}
-    <Todos v-bind:geoduck="todosArr" />
+    {{ msg }}
+    <Todos v-bind:geoduck="todosArr" v-on:rec-one-todo="removeTodo" />
   </div>
 </template>
 
 <script>
-import Todos from "./components/Todos.vue";
+  import Todos from "./components/Todos.vue";
   export default {
     name: "App",
     components: {
-      Todos: Todos
+      Todos: Todos,
+    },
+    methods: {
+      removeTodo(id) {
+        console.log("received in app.vue");
+        console.log(id);
+        this.todosArr = this.todosArr.filter(item => (item.id !== id));
+      },
     },
     data() {
       return {
@@ -19,21 +26,21 @@ import Todos from "./components/Todos.vue";
           {
             id: 1,
             title: "todo uno",
-            completed: false
+            completed: false,
           },
           {
             id: 2,
             title: "todo two",
-            completed: false
+            completed: false,
           },
           {
             id: 3,
             title: "todo three",
-            completed: true
+            completed: true,
           },
-        ]
-      }
-    }
+        ],
+      };
+    },
   };
 </script>
 
