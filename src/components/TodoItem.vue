@@ -1,6 +1,6 @@
 <template>
   <div class="todo-item" v-bind:class="{'is-complete':todo.completed}">
-    <p>Todo iteeeeeeeem</p>
+    <p>Todo iteeeeem</p>
     <h1>Name: {{ todo.title }} </h1>
     <h1> Completed: {{ todo.completed }} </h1>
   </div>
