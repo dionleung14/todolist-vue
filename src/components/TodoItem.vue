@@ -1,15 +1,16 @@
 <template>
-  <div class="todo-item" v-bind:class="{'is-complete':todo.completed}">
-    <p>Todo iteeeeem</p>
-    <h1>Name: {{ todo.title }} </h1>
-    <h1> Completed: {{ todo.completed }} </h1>
+  <div class="todo-item" v-bind:class="{'is-complete':coffee.completed}">
+    <p>Todo id: {{ coffee.id }} </p>
+    <h1>Name: {{ coffee.title }} </h1>
+    <h1> Completed: {{ coffee.completed }} </h1>
+    <button :id="coffee.id">Complete</button>
   </div>
 </template>
 
 <script>
 export default {
   name: "TodoItem",
-  props: ["todo"]
+  props: ["coffee"]
 }
 </script>
 

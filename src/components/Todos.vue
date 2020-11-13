@@ -1,8 +1,8 @@
 <template>
   <div>
     <div v-for="pokemon in geoduck" v-bind:key="pokemon.id">
-      <h3>{{ pokemon.title }}</h3>
-      <TodoItem v-bind:todo="pokemon"/>
+      <!-- <h3>{{ pokemon.title }}</h3> -->
+      <TodoItem v-bind:coffee="pokemon"/>
     </div>
   </div>
 </template>
