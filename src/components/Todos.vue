@@ -2,7 +2,7 @@
   <div>
     <div v-for="pokemon in geoduck" v-bind:key="pokemon.id">
       <!-- <h3>{{ pokemon.title }}</h3> -->
-      <TodoItem v-bind:coffee="pokemon"/>
+      <TodoItem v-bind:coffee="pokemon" v-on:del-todo="$emit('rec-one-todo', pokemon.id)"/>
     </div>
   </div>
 </template>
@@ -15,7 +15,12 @@
     components: {
       TodoItem
     },
-    props: ["geoduck"]
+    props: ["geoduck"],
+    methods: {
+      received() {
+        console.log("received a payload")
+      }
+    }
   };
 </script>
 

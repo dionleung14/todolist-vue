@@ -1,17 +1,29 @@
 <template>
   <div class="todo-item" v-bind:class="{'is-complete':coffee.completed}">
-    <p>Todo id: {{ coffee.id }} </p>
+    <p>
+      <input type="checkbox" v-on:change="markComplete">
+      Todo id: {{ coffee.id }}
+    </p>
     <h1>Name: {{ coffee.title }} </h1>
     <h1> Completed: {{ coffee.completed }} </h1>
-    <button :id="coffee.id">Complete</button>
+    <button class="del" :id="coffee.id" v-on:click="deleteMe" @click="$emit('del-todo', coffee.id)">X</button>
   </div>
 </template>
 
 <script>
-export default {
-  name: "TodoItem",
-  props: ["coffee"]
-}
+  export default {
+    name: "TodoItem",
+    props: ["coffee"],
+    methods: {
+      markComplete() {
+        this.coffee.completed = !this.coffee.completed
+      },
+      deleteMe() {
+        console.log("i've been clicked!")
+        console.log(this.coffee.id)
+      }
+    }
+  }
 </script>
 
 <style scoped>
