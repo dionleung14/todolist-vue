@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Header />
     {{ msg }}
     <Todos v-bind:geoduck="todosArr" v-on:rec-one-todo="removeTodo" />
   </div>
@@ -7,10 +8,12 @@
 
 <script>
   import Todos from "./components/Todos.vue";
+  import Header from "./components/layout/Header.vue";
   export default {
     name: "App",
     components: {
       Todos: Todos,
+      Header,
     },
     methods: {
       removeTodo(id) {
