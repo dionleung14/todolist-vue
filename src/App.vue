@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <AddTodo v-on:add-todo="aWholeNewTodo"/>
+    <AddTodo v-on:add-todo="aWholeNew"/>
     <Todos v-bind:geoduck="todosArr" v-on:rec-one-todo="removeTodo" />
     {{ msg }}
   </div>
@@ -24,7 +24,7 @@
         console.log(id);
         this.todosArr = this.todosArr.filter(item => (item.id !== id));
       },
-      aWholeNewTodo(data) {
+      aWholeNew(data) {
         console.log("a new todo was received")
         console.log(data)
       }
