@@ -20,13 +20,15 @@
     },
     methods: {
       removeTodo(id) {
-        console.log("received in app.vue");
-        console.log(id);
+        // console.log("received in app.vue");
+        // console.log(id);
         this.todosArr = this.todosArr.filter(item => (item.id !== id));
       },
       aWholeNew(data) {
-        console.log("a new todo was received")
-        console.log(data)
+        this.todosArr = [...this.todosArr, data]
+        // this.todosArr.push(data)
+        // console.log("a new todo was received")
+        // console.log(data)
       }
     },
     data() {

@@ -1,7 +1,7 @@
 <template>
   <div>
     <form @submit="wristslap">
-      <input type="text" v-model="title" name="title" placeholder="Add a todo">
+      <input type="text" v-model="trick" name="title" placeholder="Add a todo">
       <input class="btn" type="submit" value="Submit" >
     </form>
   </div>
@@ -17,15 +17,16 @@ export default {
     }
   },
   methods: {
-    wristslap() {
+    wristslap(event) {
       event.preventDefault()
       const newTodo = {
         id: uuidv4(),
-        title: this.title,
+        title: this.trick,
         completed: false
       }
       // send up to parent
       this.$emit("add-todo", newTodo)
+      this.burger = ""
       // console.log("submitted a todo")
       // console.log(newTodo)
     }
