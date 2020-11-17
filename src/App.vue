@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <AddTodo v-on:add-todo="aWholeNew"/>
+    <AddTodo v-on:add-todo="aWholeNew" />
     <Todos v-bind:geoduck="todosArr" v-on:rec-one-todo="removeTodo" />
     {{ msg }}
   </div>
@@ -16,42 +16,53 @@
     components: {
       Todos: Todos,
       Header,
-      AddTodo
-    },
-    methods: {
-      removeTodo(id) {
-        // console.log("received in app.vue");
-        // console.log(id);
-        this.todosArr = this.todosArr.filter(item => (item.id !== id));
-      },
-      aWholeNew(data) {
-        this.todosArr = [...this.todosArr, data]
-        // this.todosArr.push(data)
-        // console.log("a new todo was received")
-        // console.log(data)
-      }
+      AddTodo,
     },
     data() {
       return {
         msg: "Hello",
         todosArr: [
-          {
-            id: 1,
-            title: "todo uno",
-            completed: false,
-          },
-          {
-            id: 2,
-            title: "todo two",
-            completed: false,
-          },
-          {
-            id: 3,
-            title: "todo three",
-            completed: true,
-          },
+          // {
+          //   id: 1,
+          //   title: "todo uno",
+          //   completed: false,
+          // },
+          // {
+          //   id: 2,
+          //   title: "todo two",
+          //   completed: false,
+          // },
+          // {
+          //   id: 3,
+          //   title: "todo three",
+          //   completed: true,
+          // },
         ],
       };
+    },
+    created: () => {
+      // console.log("yeeeeeet");
+      fetch("https://jsonplaceholder.typicode.com/todos/3")
+          .then((response) => {
+            // console.log(response.json());
+            response.json()
+            // console.log(data);
+          })
+          .then(json => {console.log(json)})
+          .catch(err => console.log(err));
+    },
+    methods: {
+      removeTodo(id) {
+        // console.log("received in app.vue");
+        // console.log(id);
+        this.todosArr = this.todosArr.filter(item => item.id !== id);
+      },
+      aWholeNew(data) {
+        this.todosArr = [...this.todosArr, data];
+        // this.todosArr.push(data)
+        // console.log("a new todo was received")
+        // console.log(data)
+      },
     },
   };
 </script>
@@ -78,6 +89,6 @@
   }
 
   .btn:hover {
-    background: #666
+    background: #666;
   }
 </style>

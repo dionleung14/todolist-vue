@@ -1,7 +1,7 @@
 <template>
   <div>
     <form @submit="wristslap">
-      <input type="text" v-model="trick" name="title" placeholder="Add a todo">
+      <input type="text" v-model="autumn" name="autumn" placeholder="Add a todo">
       <input class="btn" type="submit" value="Submit" >
     </form>
   </div>
@@ -13,7 +13,7 @@ export default {
   name: "AddTodo",
   data() {
     return {
-      title: ''
+      autumn: ''
     }
   },
   methods: {
@@ -21,12 +21,12 @@ export default {
       event.preventDefault()
       const newTodo = {
         id: uuidv4(),
-        title: this.trick,
+        title: this.autumn,
         completed: false
       }
       // send up to parent
-      this.$emit("add-todo", newTodo)
-      this.burger = ""
+      this.$emit("add-todo", newTodo);
+      this.autumn = ""
       // console.log("submitted a todo")
       // console.log(newTodo)
     }
