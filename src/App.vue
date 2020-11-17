@@ -22,33 +22,46 @@
       return {
         msg: "Hello",
         todosArr: [
-          // {
-          //   id: 1,
-          //   title: "todo uno",
-          //   completed: false,
-          // },
-          // {
-          //   id: 2,
-          //   title: "todo two",
-          //   completed: false,
-          // },
-          // {
-          //   id: 3,
-          //   title: "todo three",
-          //   completed: true,
-          // },
+          {
+            id: 1,
+            title: "todo uno",
+            completed: false,
+          },
+          {
+            id: 2,
+            title: "todo two",
+            completed: false,
+          },
+          {
+            id: 3,
+            title: "todo three",
+            completed: true,
+          },
         ],
       };
     },
     created: () => {
       // console.log("yeeeeeet");
-      fetch("https://jsonplaceholder.typicode.com/todos/3")
-          .then((response) => {
+      fetch("https://jsonplaceholder.typicode.com/users/1/todos?_limit=5")
+          .then(response => 
             // console.log(response.json());
+            // console.log("hello");
             response.json()
             // console.log(data);
+          )
+          .then(json => {
+            // console.log(json);
+            // console.log("hey")
+            // console.log(this.todosArr)
+            // console.log("now");
+            // this.percocet();
+            json.forEach((element) => {
+              console.log("yo yo yo");
+              console.log(element);
+              this.todosArr.push(element)
+            });
+            // this.todosArr = json
           })
-          .then(json => {console.log(json)})
           .catch(err => console.log(err));
     },
     methods: {
@@ -63,6 +76,9 @@
         // console.log("a new todo was received")
         // console.log(data)
       },
+      percocet() {
+        console.log("percocet")
+      }
     },
   };
 </script>

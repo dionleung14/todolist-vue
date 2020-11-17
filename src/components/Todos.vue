@@ -20,9 +20,6 @@
       received() {
         console.log("received a payload")
       },
-      created() {
-        console.log("todos.vue has been created")
-      }
     }
   };
 </script>
