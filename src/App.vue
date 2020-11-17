@@ -22,21 +22,21 @@
       return {
         msg: "Hello",
         todosArr: [
-          {
-            id: 1,
-            title: "todo uno",
-            completed: false,
-          },
-          {
-            id: 2,
-            title: "todo two",
-            completed: false,
-          },
-          {
-            id: 3,
-            title: "todo three",
-            completed: true,
-          },
+          // {
+          //   id: 1,
+          //   title: "todo uno",
+          //   completed: false,
+          // },
+          // {
+          //   id: 2,
+          //   title: "todo two",
+          //   completed: false,
+          // },
+          // {
+          //   id: 3,
+          //   title: "todo three",
+          //   completed: true,
+          // },
         ],
       };
     },
