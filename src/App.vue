@@ -40,7 +40,7 @@
         ],
       };
     },
-    created: () => {
+    created() {
       // console.log("yeeeeeet");
       fetch("https://jsonplaceholder.typicode.com/users/1/todos?_limit=5")
           .then(response => 
@@ -50,14 +50,11 @@
             // console.log(data);
           )
           .then(json => {
-            // console.log(json);
-            // console.log("hey")
-            // console.log(this.todosArr)
-            // console.log("now");
-            // this.percocet();
             json.forEach((element) => {
-              console.log("yo yo yo");
-              console.log(element);
+              // console.log("oi oi oi");
+              // console.log(element);
+              // this.percocet();
+              this.todosArr = [...this.todosArr, element]
               this.todosArr.push(element)
             });
             // this.todosArr = json
