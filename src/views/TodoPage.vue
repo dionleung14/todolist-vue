@@ -54,7 +54,7 @@
         .then(json => {
           json.forEach(element => {
             // console.log("oi oi oi");
-            // console.log(element);
+            console.log(element);
             // this.percocet();
             this.todosArr = [...this.todosArr, element];
             // this.todosArr.push(element)
